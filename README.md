@@ -10,7 +10,7 @@
 
 **A modern, interactive portfolio showcasing DevOps expertise, cloud computing skills, and software engineering projects**
 
-[🌐 Live Demo](https://your-vercel-url.vercel.app) • [📧 Contact](mailto:wiame.yousfi22@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/wiame-yousfi-2a989a243/)
+[🌐 Live Demo](https://wiameyousfi.vercel.app/) • [📧 Contact](mailto:wiame.yousfi22@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/wiame-yousfi-2a989a243/)
 
 </div>
 
