@@ -10,7 +10,7 @@
 
 **A modern, interactive portfolio showcasing DevOps expertise, cloud computing skills, and software engineering projects**
 
-[🌐 Live Demo](https://yousfiwiame.github.io/portfolio) • [📧 Contact](mailto:wiame.yousfi22@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/wiame-yousfi-2a989a243/)
+[🌐 Live Demo](https://your-vercel-url.vercel.app) • [📧 Contact](mailto:wiame.yousfi22@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/wiame-yousfi-2a989a243/)
 
 </div>
 
@@ -178,10 +178,11 @@ To display your real GitHub activity in the portfolio:
 6. Click **Save**
 7. Redeploy your site
 
-#### **For GitHub Pages Deployment:**
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Run: `npm run deploy`
-3. Your portfolio will be available at: `https://yousfiwiame.github.io/portfolio`
+#### **For Vercel Deployment:**
+1. Connect your GitHub repository to Vercel
+2. Add environment variable: `VITE_GITHUB_TOKEN` with your GitHub Personal Access Token
+3. Deploy automatically on every push to main branch
+4. Your portfolio will be available at your Vercel URL
 
 ### **Running the Portfolio**
 

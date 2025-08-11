@@ -31,6 +31,30 @@ interface GitHubRepo {
 
 const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 
+// Generate fallback contribution data when GitHub token is not available
+const generateFallbackContributions = (): ContributionDay[] => {
+  const contributions: ContributionDay[] = [];
+  const today = new Date();
+  
+  // Generate 365 days of fallback data
+  for (let i = 364; i >= 0; i--) {
+    const date = new Date(today);
+    date.setDate(date.getDate() - i);
+    
+    // Random contribution levels for demo purposes
+    const level = Math.floor(Math.random() * 5) as 0 | 1 | 2 | 3 | 4;
+    const count = Math.floor(Math.random() * 10);
+    
+    contributions.push({
+      date: date.toISOString().split('T')[0],
+      count,
+      level
+    });
+  }
+  
+  return contributions;
+};
+
 const Interactive = () => {
   const { t, language } = useLanguage();
   const [contributions, setContributions] = useState<ContributionDay[]>([]);
@@ -46,8 +70,33 @@ const Interactive = () => {
         setError(null);
 
         if (!GITHUB_TOKEN) {
-          // If no token, show a message about configuring it
-          setError('GitHub token not configured. Please add VITE_GITHUB_TOKEN to your environment variables to see your real GitHub activity.');
+          // If no token, show a fallback contribution graph
+          const fallbackContributions = generateFallbackContributions();
+          setContributions(fallbackContributions);
+          generateMonthLabels(fallbackContributions);
+          
+          // Set fallback repositories
+          setRepos([
+            {
+              name: "portfolio",
+              description: "My personal portfolio website built with React, TypeScript, and Tailwind CSS",
+              language: "TypeScript",
+              stars: 0,
+              forks: 0,
+              url: "https://github.com/yousfiwiame/portfolio",
+              topics: ["react", "typescript", "tailwindcss", "portfolio"]
+            },
+            {
+              name: "asteroid-watch",
+              description: "Interactive space monitoring app for real-time asteroid tracking",
+              language: "JavaScript",
+              stars: 0,
+              forks: 0,
+              url: "https://github.com/yousfiwiame/asteroid-watch",
+              topics: ["react", "nasa-api", "space", "monitoring"]
+            }
+          ]);
+          
           setIsLoading(false);
           return;
         }
@@ -232,6 +281,14 @@ const Interactive = () => {
               : 'My GitHub contribution activity over the past year'
             }
           </p>
+          {!GITHUB_TOKEN && (
+            <div className="mt-4 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+              <p className="text-amber-800 dark:text-amber-200 text-sm">
+                <strong>Note:</strong> This is a demo contribution graph. To see your real GitHub activity, 
+                add <code className="bg-amber-100 dark:bg-amber-800 px-1 rounded">VITE_GITHUB_TOKEN</code> to your environment variables.
+              </p>
+            </div>
+          )}
         </motion.div>
 
         {/* GitHub-style Contribution Graph */}
