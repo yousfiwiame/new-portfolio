@@ -14,7 +14,7 @@ import { useLocation } from "react-router-dom";
 const Index = () => {
   const { pathname, hash } = useLocation();
   
-  // Handle smooth scrolling to anchors
+  // Handle smooth scrolling to anchors and ensure page starts at top
   useEffect(() => {
     if (hash) {
       const element = document.getElementById(hash.substring(1));
@@ -23,8 +23,16 @@ const Index = () => {
           element.scrollIntoView({ behavior: "smooth" });
         }, 100);
       }
+    } else {
+      // If no hash, scroll to top
+      window.scrollTo(0, 0);
     }
   }, [pathname, hash]);
+
+  // Ensure page starts at top on initial load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="bg-background text-foreground min-h-screen">
