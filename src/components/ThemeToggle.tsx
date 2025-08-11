@@ -15,6 +15,10 @@ const ThemeToggle = () => {
     } else if (prefersDark) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
+    } else {
+      // Default to light mode if no preference
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
