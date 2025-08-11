@@ -7,6 +7,10 @@
   NPM_CONFIG_PLATFORM = "linux"
   NPM_CONFIG_ARCH = "x64"
 
+[build.environment.VITE_GITHUB_TOKEN]
+  # Add your GitHub token here for Netlify builds
+  # You can also set this in Netlify dashboard for security
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

@@ -10,7 +10,7 @@
 
 **A modern, interactive portfolio showcasing DevOps expertise, cloud computing skills, and software engineering projects**
 
-[🌐 Live Demo](https://your-portfolio-url.com) • [📧 Contact](mailto:wiame.yousfi22@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/wiame-yousfi-2a989a243/)
+[🌐 Live Demo](https://yousfiwiame.github.io/portfolio) • [📧 Contact](mailto:wiame.yousfi22@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/wiame-yousfi-2a989a243/)
 
 </div>
 
@@ -159,13 +159,29 @@ VITE_GITHUB_TOKEN=your_github_personal_access_token_here
 ### **Setting up GitHub Token**
 To display your real GitHub activity in the portfolio:
 
+#### **For Local Development:**
 1. Go to [GitHub Settings > Personal Access Tokens](https://github.com/settings/tokens)
 2. Click "Generate new token (classic)"
 3. Give it a name like "Portfolio Access"
 4. Select scopes: `public_repo` and `read:user`
 5. Copy the generated token
-6. Add it to your `.env` file as `VITE_GITHUB_TOKEN`
-7. Restart your development server
+6. Create a `.env` file in your project root
+7. Add: `VITE_GITHUB_TOKEN=your_token_here`
+8. Restart your development server
+
+#### **For Netlify Deployment:**
+1. Go to your Netlify dashboard
+2. Navigate to **Site settings** → **Environment variables**
+3. Click **Add a variable**
+4. **Key**: `VITE_GITHUB_TOKEN`
+5. **Value**: Your GitHub Personal Access Token
+6. Click **Save**
+7. Redeploy your site
+
+#### **For GitHub Pages Deployment:**
+1. Install gh-pages: `npm install --save-dev gh-pages`
+2. Run: `npm run deploy`
+3. Your portfolio will be available at: `https://yousfiwiame.github.io/portfolio`
 
 ### **Running the Portfolio**
 

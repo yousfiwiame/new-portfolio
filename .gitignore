@@ -25,20 +25,3 @@ dist-ssr
 
 # Environment variables
 .env
-
-# Private/Personal files
-public/resumes/
-public/certificates/
-public/WiameYousfi.jpg
-
-# All images in public folder
-public/*.png
-public/*.jpg
-public/*.jpeg
-public/*.gif
-public/*.svg
-public/*.webp
-public/AsteroidWatch.png
-public/Shophub.jpeg
-public/placeholder.svg
-public/vite.svg
