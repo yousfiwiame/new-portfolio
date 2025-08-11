@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 25% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+ 
+    --primary: 267 58% 78%;  /* Lavender */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 151 9% 53%;  /* Sage green */
+    --secondary-foreground: 240 5.9% 10%;
+
+    --accent: 355 100% 77%;  /* Soft coral */
+    --accent-foreground: 240 5.9% 10%;
+ 
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 267 58% 78%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 260 25% 11%;
+    --foreground: 0 0% 98%;
+ 
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 267 58% 78%;
+    --primary-foreground: 240 5.9% 10%;
+ 
+    --secondary: 151 9% 53%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 355 100% 77%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 267 58% 78%;
+  }
+}
+
+/* Gradient Mesh Background */
+.gradient-mesh {
+  background-image: 
+    radial-gradient(at 40% 20%, hsla(267,58%,78%,0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(151,9%,53%,0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355,100%,77%,0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(267,58%,78%,0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(151,9%,53%,0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(355,100%,77%,0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(267,58%,78%,0.1) 0px, transparent 50%);
+}
+
+/* Glass Morphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.dark .glass-card {
+  background: rgba(17, 17, 17, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Micro-interactions */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* Floating Action Button */
+.floating-action-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+} 
