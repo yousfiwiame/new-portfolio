@@ -24,7 +24,20 @@ export default defineConfig(({ mode }) => ({
       external: [
         '@rollup/rollup-win32-x64-msvc',
         '@rollup/rollup-darwin-x64'
-      ]
+      ],
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          animations: ['framer-motion', 'three', '@react-three/fiber']
+        }
+      }
     }
+  },
+  optimizeDeps: {
+    exclude: [
+      '@rollup/rollup-win32-x64-msvc',
+      '@rollup/rollup-darwin-x64'
+    ]
   }
 }));
