@@ -382,7 +382,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 **Built with ❤️ by Wiame Yousfi - DevOps Engineer & Software Developer**
 
 *"Building elegant solutions for complex challenges"*
-
-<div class="tenor-gif-embed" data-postid="15445996" data-share-method="host" data-aspect-ratio="1.23552" data-width="100%"><a href="https://tenor.com/view/puffy-bear-love-heart-gif-15445996">Puffy Bear Love Sticker</a>from <a href="https://tenor.com/search/puffy+bear-stickers">Puffy Bear Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-</div>
